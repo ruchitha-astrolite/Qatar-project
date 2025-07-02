@@ -1,0 +1,1060 @@
+/* src/MainContent.css */
+
+/* Set Inter as primary font if available */
+body {
+    font-family: 'Inter', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f2f5; /* Light mode default */
+    color: #333333; /* Light mode default text */
+}
+
+/* Dark mode for body */
+.dark-mode body {
+    background-color: #1a1a1a; /* Very dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* --- Main Content Layout --- */
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f0f2f5; /* Light mode default */
+    min-height: calc(100vh - 60px);
+    overflow-y: auto;
+    color: #333333; /* Light mode default text */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Dark mode for main content container */
+.dark-mode .main-content-container {
+    background-color: #1a1a1a; /* Match body or slightly lighter dark */
+    color: #e0e0e0; /* Light text */
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 20px;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.main-grid-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-grid-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: -5px;
+}
+
+/* --- Generic Card/Panel Styles --- */
+.card-panel {
+    background-color: #ffffff; /* Light mode default */
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    padding: 5px;
+}
+
+/* Dark mode for generic cards/panels */
+.dark-mode .card-panel {
+    background-color: #2a2a2a; /* Darker background for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* More pronounced dark shadow */
+    border: 1px solid #3a3a3a; /* Subtle border for separation */
+}
+
+/* --- Section Headers (Consistent Styling) --- */
+.popular-categories-header,
+.popular-product-header,
+.stock-header,
+.latest-order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee; /* Light mode default */
+}
+
+/* Dark mode for section headers borders */
+.dark-mode .popular-categories-header,
+.dark-mode .popular-product-header,
+.dark-mode .stock-header,
+.dark-mode .latest-order-header {
+    border-bottom: 1px solid #333333; /* Darker border */
+}
+
+.popular-categories-header h2,
+.popular-product-header h2,
+.stock-header h2,
+.latest-order-header h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #333333; /* Light mode default */
+    padding: 1px;
+}
+
+/* Dark mode for header text */
+.dark-mode .popular-categories-header h2,
+.dark-mode .popular-product-header h2,
+.dark-mode .stock-header h2,
+.dark-mode .latest-order-header h2 {
+    color: #f0f0f0; /* Lighter text */
+}
+
+.view-all-link {
+    color: #16a34a;
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode for view-all links (keep them distinct but ensure visibility) */
+.dark-mode .view-all-link {
+    color: #6ee7b7; /* Lighter green for dark mode */
+}
+.dark-mode .view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Promotion Banner --- */
+/* The promotion banner has a fixed background color, so it might not need dark mode adjustments
+   unless you want to change its green color in dark mode. Assuming it stays green. */
+.promotion-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: #16a34a; /* Match image background - keep fixed green */
+    border-radius: 20px;
+    color: #ffffff; /* Text is already white */
+    flex-wrap: wrap;
+}
+
+.promotion-banner-content {
+    flex: 1;
+    color: #ffffff;
+}
+
+.promotion-banner-content h2,
+.promotion-banner-content p {
+    margin: 0 0 10px 0;
+}
+
+.promotion-banner-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #16a34a; /* Same as banner */
+}
+
+.promotion-banner-image {
+    width: 100px;
+    height: 30%;
+    object-fit: contain;
+}
+
+.promotion-banner-button.right-button {
+    background-color: #ffffff;
+    color: #16a34a;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.promotion-banner-button.right-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Dark mode for banner button */
+.dark-mode .promotion-banner-button.right-button {
+    background-color: #34d399; /* Lighter green for button background */
+    color: #1a1a1a; /* Dark text on light button */
+}
+.dark-mode .promotion-banner-button.right-button:hover {
+    background-color: #6ee7b7;
+}
+
+/* --- Popular Categories --- */
+.popular-categories-header {
+    padding: 16px 20px 10px;
+}
+
+.popular-categories-header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222; /* Light mode default */
+    margin: 0;
+}
+
+/* Dark mode for h2 here */
+.dark-mode .popular-categories-header h2 {
+    color: #f0f0f0;
+}
+
+
+/* Grid layout for category cards */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    padding: 0 25px 50px;
+    text-align: center;
+}
+
+/* Individual category card */
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 10px;
+    border-radius: 10px;
+    background-color: #fff; /* Light mode default */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Dark mode for category item */
+.dark-mode .category-item {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.dark-mode .category-item:hover {
+    background-color: #3a3a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon wrapper */
+.category-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ecfdf5; /* Light mode default - specific light green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+/* Dark mode for category icon background - adjust as needed, maybe a dark green */
+.dark-mode .category-icon {
+    background-color: #1a4a35; /* Darker green */
+}
+
+
+/* Icon image */
+.category-icon img {
+    width: 70px;
+    height: 60px;
+    object-fit: contain;
+    /* Images might need filter: invert() if they are not SVG or already dark-mode compatible */
+}
+
+/* Category label */
+.category-name {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #555; /* Light mode default */
+}
+
+/* Dark mode for category name text */
+.dark-mode .category-name {
+    color: #b0b0b0; /* Lighter gray */
+}
+
+/* --- Categories and Stock --- */
+/* === Header Section === */
+.stock-header {
+    padding: 20px 20px 10px 20px;
+}
+
+.stock-header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222; /* Light mode default */
+    margin: 0;
+}
+/* Dark mode for stock header h2 */
+.dark-mode .stock-header h2 {
+    color: #f0f0f0;
+}
+
+/* === Filter Button === */
+.filter-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid #16a34a; /* Light mode default */
+    border-radius: 6px;
+    background-color: #fff; /* Light mode default */
+    font-size: 0.9em;
+    color: #16a34a; /* Light mode default */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Dark mode for filter button */
+.dark-mode .filter-button {
+    border: 1px solid #34d399; /* Lighter green border */
+    background-color: #2a2a2a; /* Dark background */
+    color: #34d399; /* Lighter green text */
+}
+.dark-mode .filter-button:hover {
+    background-color: #3a3a3a;
+    color: #34d399;
+}
+.dark-mode .filter-button svg {
+    stroke: #34d399; /* Ensure SVG color changes */
+}
+
+
+/* === Grid Container === */
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    padding: 0 20px 20px;
+}
+
+/* === Each Item Card === */
+.stock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb; /* Light mode default */
+    background-color: #f9fafb; /* Light mode default */
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Dark mode for stock item */
+.dark-mode .stock-item {
+    border: 1px solid #3a3a3a;
+    background-color: #2a2a2a;
+}
+.dark-mode .stock-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+/* === Image in Card === */
+.stock-item-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    /* Consider filter: invert(1) for dark mode if images are bright */
+}
+
+/* === Stock Count === */
+.stock-quantity {
+    font-size: 1em;
+    font-weight: 700;
+    color: #222; /* Light mode default */
+    margin-bottom: 4px;
+}
+
+/* Dark mode for stock quantity */
+.dark-mode .stock-quantity {
+    color: #f0f0f0;
+}
+
+/* === Category Name === */
+.stock-name {
+    font-size: 0.85em;
+    color: #555; /* Light mode default */
+    font-weight: 500;
+}
+
+/* Dark mode for stock name */
+.dark-mode .stock-name {
+    color: #b0b0b0;
+}
+
+/* === Optional Color Variants === */
+/* These will need specific dark mode definitions if their colors are not purely functional */
+.color-green {
+    background-color: #d1fae5; /* Light mode default */
+    border-color: #16a34a;
+}
+.dark-mode .color-green {
+    background-color: #1a4a35; /* Darker green for dark mode */
+    border-color: #34d399;
+}
+
+.color-orange {
+    background-color: #eff6ff; /* Assuming this is light blue based on the default value */
+}
+.dark-mode .color-orange {
+    background-color: #2a3a4a; /* Darker blue */
+}
+
+.color-blue {
+    background-color: #eff6ff;
+}
+.dark-mode .color-blue {
+    background-color: #2a3a4a;
+}
+
+.color-red {
+    background-color: #eff6ff;
+}
+.dark-mode .color-red {
+    background-color: #4a2a2a; /* Darker red */
+}
+
+.color-purple {
+    background-color: #eff6ff;
+}
+.dark-mode .color-purple {
+    background-color: #3a2a4a; /* Darker purple */
+}
+
+
+/* --- Popular Product --- */
+.popular-product-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #e5e7eb; /* Light mode default */
+    border-radius: 12px 12px 0 0;
+}
+
+/* Dark mode for popular product header border */
+.dark-mode .popular-product-header {
+    border-bottom: 1px solid #333333;
+}
+
+.popular-product-header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222222; /* Light mode default */
+    margin: 0;
+}
+
+/* Dark mode for h2 */
+.dark-mode .popular-product-header h2 {
+    color: #f0f0f0;
+}
+
+/* view-all-link already handled above */
+
+
+.popular-product-grid {
+    display: flex;
+    gap: 13px;
+    padding: 10px 2px 20px 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.popular-product-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    flex-shrink: 0;
+    width: 150px;
+    border: 1px solid #e5e7eb; /* Light mode default */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #ffffff; /* Explicitly set to handle cases where it's not a .card-panel */
+}
+
+/* Dark mode for product card */
+.dark-mode .product-card {
+    border: 1px solid #3a3a3a;
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.product-card-image-container {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.product-card-image {
+    width: 90%;
+    height: 135%;
+    object-fit: contain;
+    /* Images might need filter: invert() if they are not SVG or already dark-mode compatible */
+}
+
+.product-card-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.product-card-name {
+    font-weight: 600;
+    font-size: 1em;
+    color: #333333; /* Light mode default */
+    text-align: center;
+}
+
+/* Dark mode for product card name */
+.dark-mode .product-card-name {
+    color: #f0f0f0;
+}
+
+.product-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-top: 1px solid #eeeeee; /* Light mode default */
+}
+
+/* Dark mode for product card footer border */
+.dark-mode .product-card-footer {
+    border-top: 1px solid #333333;
+}
+
+.product-card-price {
+    font-weight: 700;
+    color: #333333; /* Light mode default */
+    font-size: 1.1em;
+}
+
+/* Dark mode for product card price */
+.dark-mode .product-card-price {
+    color: #ffffff;
+}
+
+.product-card-price small {
+    font-weight: 400;
+    color: #6b7280; /* Light mode default */
+    font-size: 0.8em;
+}
+
+/* Dark mode for product card price small text */
+.dark-mode .product-card-price small {
+    color: #b0b0b0;
+}
+
+.product-card-add-button {
+    background-color: #16a34a; /* Green button */
+    color: #ffffff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.product-card-add-button:hover {
+    background-color: #065f46;
+}
+/* Dark mode for add button (keeping green but can adjust shade) */
+.dark-mode .product-card-add-button {
+    background-color: #34d399; /* Lighter green */
+}
+.dark-mode .product-card-add-button:hover {
+    background-color: #6ee7b7;
+}
+
+
+.product-card-add-button svg {
+    width: 20px;
+    height: 20px;
+    /* Consider filter: invert(1) for SVGs if they are black and need to be white */
+}
+
+
+.income-header {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: -4px;
+    margin-left: 8px;
+    color: #333333; /* Light mode default */
+    padding: 5px;
+}
+/* Dark mode for income header */
+.dark-mode .income-header {
+    color: #f0f0f0;
+}
+
+.income-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: space-between;
+    padding: 8px 8px;
+}
+
+.income-card {
+    flex: 1;
+    width: 50px;
+    background-color: #f9fafb; /* Light mode default */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb; /* Light mode default */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Dark mode for income card */
+.dark-mode .income-card {
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+}
+
+.income-icon-bg {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    /* This background color should probably change based on the income type / icon */
+    /* If it's `background-color: #ecfdf5;` for green icons, etc., add dark mode for those. */
+}
+
+/* Dark mode for income icon background */
+/* Assuming a generic background for the icon circle, adjust as needed if different colors are used */
+.dark-mode .income-icon-bg {
+    background-color: #1a1a1a; /* Darker circle, or a specific dark variant of its original color */
+}
+
+
+.income-img-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    /* Consider filter: invert() for images/SVG icons */
+}
+
+.income-amount {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2c3e50; /* Light mode default */
+    margin-bottom: 4px;
+}
+
+/* Dark mode for income amount */
+.dark-mode .income-amount {
+    color: #e0e0e0;
+}
+
+.income-period {
+    color: #7f8c8d; /* Light mode default */
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Dark mode for income period */
+.dark-mode .income-period {
+    color: #b0b0b0;
+}
+
+/* --- Notification Section --- */
+.notification-panel {
+    background-color: #ffffff; /* Light mode default */
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+/* Dark mode for notification panel */
+.dark-mode .notification-panel {
+    background-color: #2a2a2a;
+}
+
+.notification-panel::-webkit-scrollbar {
+    display: none;
+}
+
+.notification-header {
+    padding: 10px 15px;
+    margin-bottom: -5px;
+}
+
+.notification-header h2 {
+    color: #333333; /* Light mode default */
+    padding: 10px 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Dark mode for notification header h2 */
+.dark-mode .notification-header h2 {
+    color: #f0f0f0;
+}
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+    border-bottom: 1px solid #eeeeee; /* Light mode default */
+}
+
+/* Dark mode for notification item border */
+.dark-mode .notification-item {
+    border-bottom: 1px solid #333333;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.notification-content {
+    flex: 1;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.notification-message {
+    color: #333333; /* Light mode default */
+    font-weight: 550;
+    line-height: 1.4;
+    margin: 0;
+    font-size: 0.95em;
+}
+
+/* Dark mode for notification message */
+.dark-mode .notification-message {
+    color: #e0e0e0;
+}
+
+.notification-time {
+    color: #999999; /* Light mode default */
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Dark mode for notification time */
+.dark-mode .notification-time {
+    color: #b0b0b0;
+}
+
+.notification-arrow {
+    color: #999999; /* Light mode default */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Dark mode for notification arrow */
+.dark-mode .notification-arrow {
+    color: #b0b0b0;
+}
+
+/* --- Latest Order Section --- */
+.latest-order-panel {
+    background-color: #ffffff; /* Light mode default */
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Dark mode for latest order panel */
+.dark-mode .latest-order-panel {
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.latest-order-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222222; /* Light mode default */
+    padding: 10px 0 10px 25px;
+    margin: 0;
+}
+
+/* Dark mode for latest order header */
+.dark-mode .latest-order-header {
+    color: #f0f0f0;
+}
+
+.latest-order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.latest-order-table th {
+    background-color: #f0f4f8; /* Light mode default */
+    font-weight: 700;
+    color: #222222; /* Light mode default */
+    padding: 10px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: none;
+}
+
+/* Dark mode for table headers */
+.dark-mode .latest-order-table th {
+    background-color: #333333;
+    color: #f0f0f0;
+}
+
+.latest-order-table td {
+    background-color: #ffffff; /* Light mode default */
+    padding: 5px 8px;
+    color: #444444; /* Light mode default */
+    border-bottom: 1px solid #eee; /* Light mode default */
+}
+
+/* Dark mode for table cells */
+.dark-mode .latest-order-table td {
+    background-color: #2a2a2a; /* Match panel background */
+    color: #e0e0e0;
+    border-bottom: 1px solid #333333;
+}
+
+.latest-order-table th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.latest-order-table th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.status-button {
+    padding: 7px 18px;
+    border-radius: 9999px;
+    font-size: 0.9em;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 90px;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+}
+
+.status-button.accept {
+    background-color: #d1fae5; /* Light green */
+    color: #065f46; /* Dark green text */
+}
+
+/* Dark mode for status buttons (adjust colors for visibility) */
+.dark-mode .status-button.accept {
+    background-color: #1a4a35; /* Darker green background */
+    color: #6ee7b7; /* Lighter green text */
+}
+
+.status-button.accepted {
+    background-color: #e0f2f7; /* Light blue */
+    color: #2563eb; /* Dark blue text */
+}
+
+.dark-mode .status-button.accepted {
+    background-color: #2a3a4a; /* Darker blue background */
+    color: #8bb8f7; /* Lighter blue text */
+}
+
+/* Add other status buttons here if you have more (e.g., pending, cancelled) */
+/* .status-button.pending { ... } */
+/* .dark-mode .status-button.pending { ... } */
+
+
+.order-name {
+    font-weight: 600;
+    color: #222222; /* Light mode default */
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Dark mode for order name */
+.dark-mode .order-name {
+    color: #f0f0f0;
+}
+
+.order-date {
+    font-size: 0.75em;
+    color: #6b7280; /* Light mode default */
+    display: block;
+    margin-top: -4px;
+}
+
+/* Dark mode for order date */
+.dark-mode .order-date {
+    color: #b0b0b0;
+}
+
+
+/* --- Responsive Adjustments (No dark mode specific changes needed here unless colors are hardcoded) --- */
+@media (max-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .promotion-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        min-height: auto;
+    }
+    .promotion-banner-content {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    .promotion-banner-image {
+        position: static;
+        max-width: 250px;
+        height: auto;
+    }
+    .income-grid {
+        justify-content: flex-start;
+    }
+    .income-card {
+        width: calc(33% - 10px);
+    }
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+    .product-card {
+        width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content-container {
+        padding: 15px;
+        gap: 15px;
+    }
+    .card-panel {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .popular-categories-header h2,
+    .popular-product-header h2,
+    .stock-header h2,
+    .latest-order-header h2 {
+        font-size: 1.2em;
+    }
+    .promotion-banner-content h2 {
+        font-size: 1.5rem;
+    }
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 10px;
+    }
+    .category-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .category-icon img {
+        width: 35px;
+        height: 35px;
+    }
+    .stock-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 10px;
+    }
+    .product-card {
+        width: 140px;
+    }
+    .income-card {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content-container {
+        padding: 10px;
+        gap: 10px;
+    }
+    .card-panel {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    .promotion-banner {
+        padding: 15px 20px;
+    }
+    .promotion-banner-content h2 {
+        font-size: 1.3rem;
+    }
+    .promotion-banner-content p {
+        font-size: 0.85em;
+    }
+    .promotion-banner-button {
+        padding: 8px 18px;
+    }
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .category-icon {
+        width: 45px;
+        height: 45px;
+    }
+    .category-icon img {
+        width: 30px;
+        height: 30px;
+    }
+    .stock-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .product-card {
+        width: 120px;
+    }
+    .income-card {
+        width: calc(50% - 10px);
+        padding: 8px;
+    }
+    .latest-order-table th, .latest-order-table td {
+        font-size: 0.85em;
+    }
+    .status-button {
+        padding: 3px 8px;
+        font-size: 0.7em;
+        min-width: 60px;
+    }
+}
