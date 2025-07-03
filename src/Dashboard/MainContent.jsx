@@ -1,9 +1,7 @@
-// src/MainContent.jsx
-import React from 'react';
-import './MainContent.css'; // Import the external CSS file
 
-// Reusing existing icons or defining new ones if needed for this specific content
-// Placeholder for a generic PlusIcon for the product cards
+import React from 'react';
+import './MainContent.css'; 
+
 const PlusIcon = ({ size = 16, className = '' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -11,21 +9,20 @@ const PlusIcon = ({ size = 16, className = '' }) => (
   </svg>
 );
 
-// Placeholder for Filter icon
+
 const FilterIcon = ({ size = 16, className = '' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
   </svg>
 );
 
-// Placeholder for ChevronRightIcon for notifications
 const ChevronRightIcon = ({ size = 16, className = '' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <polyline points="9 18 15 12 9 6"></polyline>
   </svg>
 );
 
-// Data for Categories and Stock (will also be used for Popular Categories by manually pulling image URLs)
+// Data for Categories and Stock 
 const categoriesData = [
     { name: 'Veggies', stock: 1890, imageUrl: 'https://img.icons8.com/ios-filled/50/40C057/natural-food.png', color: 'green' },
     { name: 'Tubers', stock: 2040, imageUrl: 'https://img.icons8.com/?size=100&id=11316&format=png&color=40C057', color: 'orange' },
@@ -53,11 +50,8 @@ const incomeData = [
 const MainContent = () => {
   return (
     <div className="main-content-container">
-      {/* Main Grid Layout */}
       <div className="main-grid">
-        {/* Left Column */}
         <div className="main-grid-left">
-          {/* Get special discounts banner */}
           <div className="promotion-banner card-panel">
             <div className="promotion-banner-content">
               <h2>Get special discounts <br />up to 45%</h2>
@@ -79,7 +73,7 @@ const MainContent = () => {
           </div>
 
 
-          {/* Popular Categories - NOW USING THE IMAGES YOU PROVIDED */}
+          {/* Popular Categories  */}
           <div className="card-panel">
             <div className="popular-categories-header">
               <h2>Popular Categories</h2>
