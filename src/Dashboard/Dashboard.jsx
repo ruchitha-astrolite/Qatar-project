@@ -1,7 +1,7 @@
-// src/Dashboard.jsx
+
 
 import React, { useState } from 'react';
-import MainContent from './MainContent.jsx'; // Assuming this component exists
+import MainContent from './MainContent.jsx'; 
 import './Dashboard.css';
 
 // === Inline SVG Icons ===
@@ -31,7 +31,7 @@ const ChevronDownIcon = ({ size = 16, className = '' }) => (
   </svg>
 );
 
-// === New Icons ===
+
 const SunIcon = ({ size = 20, className = '' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24"
     fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
@@ -86,36 +86,28 @@ const Dashboard = () => {
   };
 
   return (
-    // The dark-mode class is managed on the body tag by handleThemeToggle,
-    // so no need to add it here.
+   
     <div className={`dashboard-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
-      {/* Top Panel - The main container for the top section */}
       <div className="top-panel">
-        {/* NEW: Wrapper for Hamburger and Logo to keep them grouped on the left */}
         <div className="hamburger-and-logo">
-          {/* Hamburger Icon */}
           <div className="hamburger-icon" onClick={toggleSidebar}>
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
           </div>
 
-          {/* Logo Area */}
           <div className="logo-area">
             <img
-              src="/logo.png" // Replace with your actual logo path
+              src="/logo.png" 
               alt="Astrolite Logo"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = "https://placehold.co/180x60/4ade80/ffffff?text=Astrolite"; // Placeholder if logo fails
+                e.target.src = "https://placehold.co/180x60/4ade80/ffffff?text=Astrolite"; 
               }}
             />
           </div>
         </div>
-
-        {/* Header Content Area - Right side of the top panel */}
         <div className="header-content-area">
-          {/* Section 1: BUY/SELL Buttons */}
           <div className="section-box action-box">
             <div className="button-group">
               <button className="buy-btn active">BUY</button>
@@ -123,34 +115,29 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Section 2: Placeholder Icons */}
+         
           <div className="section-box icon-box">
             <img src="https://img.icons8.com/?size=100&id=BkugfgmBwtEI&format=png&color=000000" alt="Icon 1" className="header-icons" />
             <img src="https://img.icons8.com/?size=100&id=YrXy82StfwT9&format=png&color=000000" alt="Icon 2" className="header-icons" />
             <img src="https://img.icons8.com/?size=100&id=m9tauTQ9K0gT&format=png&color=000000" alt="Icon 3" className="header-icons" />
           </div>
 
-          {/* Section 3: Search, Toggles, Notifications, Profile */}
           <div className="section-box utility-box">
             <div className="search-container">
               <SearchIcon className="search-icon" />
               <input type="text" className="search-box" placeholder="Search" />
             </div>
 
-            {/* Theme Toggle Button */}
             <button className="icon-button" onClick={handleThemeToggle}>
               {isDarkMode ? <SunIcon /> : <MoonIcon />} {/* Renders Sun or Moon based on theme */}
             </button>
 
-            {/* Fullscreen Toggle Button */}
             <button className="icon-button" onClick={handleFullscreenToggle}>
               <FullscreenIcon />
             </button>
 
-            {/* Notification Bell Icon */}
             <BellIcon className="bell-icon" />
 
-            {/* User Profile */}
             <img src="https://i.pravatar.cc/150?img=12" alt="User" className="profile-pic" />
             <div className="profile-name">
               Saikrupan <ChevronDownIcon className="profile-down-arrow" />
@@ -159,7 +146,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Main Body Content - Contains Sidebar and Main Content Area */}
       <div className="main-body-content">
         {/* Sidebar */}
         <div className={`sidebar ${sidebarOpen ? 'visible' : 'hidden'}`}>
