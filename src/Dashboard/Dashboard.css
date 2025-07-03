@@ -1,4 +1,4 @@
-/* Dashboard.css */
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 /* Base Dashboard Container Styles */
@@ -10,97 +10,93 @@
     background-color: #f3f4f6;
     color: #374151;
     overflow: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Dark Mode Theme */
 .dark-mode {
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* Light text */
+    background-color: #121212; 
+    color: #ffffff; 
 }
-
-/* Dark Mode overrides for specific elements */
 .dark-mode .top-panel,
 .dark-mode .sidebar,
 .dark-mode .main-container,
 .dark-mode .action-box,
 .dark-mode .section-box {
-    background-color: #1e1e1e; /* Slightly lighter dark for panels/boxes */
-    border-color: #333333; /* Darker borders */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Darker shadows */
+    background-color: #1e1e1e;
+    border-color: #333333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
 }
 
 .dark-mode .header-content-area {
-    background-color: #2a2a2a; /* Darker background for header content area */
+    background-color: #2a2a2a; 
 }
 
 .dark-mode .logo-area img {
-    filter: brightness(0.8); /* Slightly dim the logo if it's too bright */
+    filter: brightness(0.8); 
 }
 
 .dark-mode .hamburger-icon .bar {
-    background-color: #ffffff; /* White bars for hamburger */
+    background-color: #ffffff;
 }
 
 .dark-mode .nav-list li {
-    color: #a0a0a0; /* Lighter gray for inactive nav items */
+    color: #a0a0a0;
 }
 
 .dark-mode .nav-list li:hover {
-    background-color: #333333; /* Darker hover background */
-    color: #22c55e; /* Keep green highlight */
+    background-color: #333333; 
+    color: #22c55e; 
 }
 
 .dark-mode .nav-list li.active {
-    background-color: #2d4036; /* Darker active background (darker green tint) */
-    color: #10b981; /* Keep active text green */
+    background-color: #2d4036; 
+    color: #10b981;
     border-right-color: #10b981;
 }
 
 .dark-mode .nav-list li i {
-    color: #a0a0a0; /* Light gray for icons */
+    color: #a0a0a0; 
 }
 .dark-mode .nav-list li.active i {
-    color: #10b981; /* Keep active icon green */
+    color: #10b981; 
 }
 
 .dark-mode .badge {
-    background-color: #16a34a; /* Slightly darker green for badge */
+    background-color: #16a34a; 
     color: #ffffff;
 }
 
 .dark-mode .search-box {
-    background-color: #333333; /* Darker search input */
+    background-color: #333333; 
     color: #ffffff;
     border-color: #555555;
 }
 
 .dark-mode .search-icon {
-    color: #bbbbbb; /* Lighter search icon */
+    color: #bbbbbb;
 }
 
 .dark-mode .mail-icon,
 .dark-mode .bell-icon {
-    color: #a0a0a0; /* Lighter icons */
+    color: #a0a0a0;
 }
 .dark-mode .mail-icon:hover,
 .dark-mode .bell-icon:hover {
-    color: #3b82f6; /* Keep blue hover */
+    color: #3b82f6; 
 }
 
-/* Dark mode for Buy/Sell buttons */
 .dark-mode .buy-btn {
-    background-color: #10b981; /* A consistent green for dark mode active */
+    background-color: #10b981; 
     color: #ffffff;
     border-color: #10b981;
 }
 .dark-mode .buy-btn:hover {
-    background-color: #0c9e70; /* Slightly darker green on hover */
+    background-color: #0c9e70;
     border-color: #0c9e70;
 }
 
 .dark-mode .sell-btn {
-    background-color: #4a4a4a; /* Darker sell button */
+    background-color: #4a4a4a; 
     color: #ffffff;
     border-color: #666666;
 }
@@ -109,16 +105,16 @@
     border-color: #777777;
 }
 
-/* Icon Button (for dark mode toggle, etc.) */
+
 .icon-button {
     background: none;
     border: none;
     cursor: pointer;
-    margin: 0 6px; /* Adjust spacing as needed */
+    margin: 0 6px; 
     display: flex;
     align-items: center;
     padding: 4px;
-    color: inherit; /* Inherit color from parent for dark mode adjustment */
+    color: inherit; 
     transition: color 0.2s ease;
 }
 
@@ -126,27 +122,27 @@
     opacity: 0.8;
 }
 
-/* === MODIFIED: Top Panel for single row === */
+
 .top-panel {
-    display: flex; /* Make it a flex container */
-    align-items: center; /* Vertically align items in the middle */
-    justify-content: space-between; /* Push content to ends */
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
     flex-shrink: 0;
     margin: 16px;
-    gap: 16px; /* Gap between major sections (hamburger+logo and header-content-area) */
+    gap: 16px; 
     box-sizing: border-box;
     position: relative;
     z-index: 101;
-    padding: 0 16px; /* Add some horizontal padding to the top panel itself */
+    padding: 0 16px; 
 }
 
-/* === MODIFIED: Logo Area === */
+
 .logo-area {
     border-radius: 0.5rem;
-    padding: 0; /* Adjust padding as it's now directly in flex row */
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center; /* Still useful for img within this area */
+    justify-content: center; 
     flex-shrink: 0;
 }
 
@@ -156,51 +152,50 @@
     object-fit: contain;
 }
 
-/* === MODIFIED: Hamburger Icon === */
 .hamburger-icon {
     cursor: pointer;
     z-index: 1002;
-    display: flex; /* ALWAYS FLEX (visible) */
+    display: flex; 
     flex-direction: column;
-    gap: 5px; /* Visual separation for bars */
+    gap: 5px; 
 }
 
 .hamburger-icon .bar {
     width: 25px;
-    height: 3px; /* Thin bars */
+    height: 3px; 
     background-color: #333;
     border-radius: 2px;
 }
 
-/* === NEW: Container for Hamburger and Logo to keep them together on the left === */
+
 .hamburger-and-logo {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between hamburger and logo */
+    gap: 10px; 
 }
 
 .sidebar {
     position: fixed;
-    top: 92px; /* You might need to adjust this value precisely */
+    top: 92px;
     left: 5px;
     width: 240px;
     border-radius: 25px;
-    height: calc(100vh - 92px - 16px); /* Height calculation */
+    height: calc(100vh - 92px - 16px); 
     background-color: #fff;
     border-right: 1px solid #ddd;
-    transform: translateX(-100%); /* Hidden by default */
-    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions for dark mode */
-    z-index: 1000; /* Ensure sidebar is above main content but below hamburger */
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
+    z-index: 1000; 
     padding: 1rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
 }
 
 .sidebar.visible {
-    transform: translateX(0); /* Make visible by sliding in */
+    transform: translateX(0); 
 }
 
-/* Ensure the sidebar is hidden when not visible, useful for accessibility */
+
 .sidebar.hidden {
     transform: translateX(-110%);
 }
@@ -213,24 +208,24 @@
     box-sizing: border-box;
     overflow: hidden;
     transition: margin-left 0.3s ease;
-    margin-left: 0; /* Default position */
-    z-index: 1; /* Ensure main content is below sidebar when it slides out */
+    margin-left: 0;
+    z-index: 1;
 }
 
 .dashboard-container.sidebar-open .main-body-content {
-    margin-left: 240px; /* Push main content when sidebar is open */
+    margin-left: 240px; 
 }
 
 .header-content-area {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align header content to the right */
+    justify-content: flex-end;
     gap: 10px;
-    padding: 0; /* Adjust padding as it's directly in flex row */
+    padding: 0; 
     flex-wrap: nowrap;
-    overflow-x: auto; /* Allow horizontal scrolling if items overflow */
-    flex-grow: 1; /* Allow it to take available space */
-    transition: background-color 0.3s ease; /* Smooth transition for dark mode */
+    overflow-x: auto; 
+    flex-grow: 1;
+    transition: background-color 0.3s ease; 
 }
 
 .section-box {
@@ -298,9 +293,7 @@
     object-fit: contain;
     transition: opacity 0.2s;
     cursor: pointer;
-    /* If these are fixed images, their color won't change with 'color',
-       but you could add a filter for dark mode if needed: */
-    /* .dark-mode & { filter: invert(0.9); } */
+   
 }
 .header-icons:hover {
     opacity: 0.7;
@@ -316,21 +309,20 @@
     padding: 8px 12px 8px 36px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; 
 }
 .search-icon {
     position: absolute;
     left: 10px;
     color: #9ca3af;
-    transition: color 0.3s ease; /* Smooth transition */
-}
+    transition: color 0.3s ease; 
 
 .mail-icon,
 .bell-icon {
     font-size: 1.5rem;
     color: #4b5563;
     cursor: pointer;
-    transition: color 0.3s ease; /* Smooth transition */
+    transition: color 0.3s ease; 
 }
 .mail-icon:hover,
 .bell-icon:hover {
@@ -347,20 +339,17 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    /* Ensure text color adapts for dark mode */
     transition: color 0.3s ease;
 }
-/* Dark mode for profile name and chevron icon */
 .dark-mode .profile-name {
-    color: #ffffff; /* White text for profile name */
+    color: #ffffff; 
 }
 .profile-down-arrow {
-    /* Base color for the chevron icon */
     color: #6b7280;
     transition: color 0.3s ease;
 }
 .dark-mode .profile-down-arrow {
-    color: #a0a0a0; /* Lighter color for chevron in dark mode */
+    color: #a0a0a0;
 }
 
 .nav-list {
@@ -412,14 +401,14 @@
     padding: 2px 8px;
     border-radius: 9999px;
     margin-left: auto;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease;
 }
 .badge.cart {
-    background-color: #22c55e; /* This is already defined for .badge, but kept for clarity if specific cart styling needed */
+    background-color: #22c55e;
 }
-/* Ensure dark mode applies to cart badge too */
+
 .dark-mode .badge.cart {
-    background-color: #16a34a; /* Same as generic badge for consistency unless different is desired */
+    background-color: #16a34a; 
 }
 
 
@@ -433,39 +422,36 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     overflow-y: scroll;
     scrollbar-width: none;
-    z-index: 1; /* Ensure main content is below sidebar when it slides out */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    z-index: 1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* === Dark Mode Specific Overrides for newly added elements === */
+
 .dark-mode .icon-button {
-    color: #a0a0a0; /* Adjust icon color for dark mode */
+    color: #a0a0a0; 
 }
 .dark-mode .icon-button:hover {
-    color: #3b82f6; /* Keep blue hover, or change if desired */
+    color: #3b82f6; 
 }
 .dark-mode .utility-box {
-    background-color: #2a2a2a; /* Darker background for utility box in dark mode */
+    background-color: #2a2a2a; 
 }
-/* === END Dark Mode Specific Overrides === */
 
-
-/* === MODIFIED MEDIA QUERIES === */
 @media (max-width: 1024px) {
     .top-panel {
-        flex-direction: column; /* Allow top panel to stack on smaller screens */
+        flex-direction: column;
         gap: 12px;
         margin: 12px;
-        padding: 0; /* Remove horizontal padding if it causes issues on smaller screens */
+        padding: 0; 
     }
 
-    /* Restore specific adjustments for logo-area and header-content-area on small screens */
+   
     .logo-area {
-        width: 100%; /* Make logo area full width */
+        width: 100%;
         padding: 12px;
         justify-content: center;
-        margin-left: 0; /* Reset margins */
-        margin-top: 0; /* Reset margins */
+        margin-left: 0; 
+        margin-top: 0;
     }
     .logo-area img {
         width: 120px;
@@ -474,15 +460,15 @@
 
     .header-content-area {
         padding: 12px;
-        flex-direction: column; /* Stack header content vertically */
+        flex-direction: column; 
         align-items: flex-start;
         gap: 12px;
         flex-wrap: wrap;
-        width: 100%; /* Take full width when stacked */
-        justify-content: center; /* Center contents of the stacked blocks */
+        width: 100%; 
+        justify-content: center; 
     }
 
-    /* Assuming left-actions and right-actions might be wrappers for your button group / utility box */
+   
     .left-actions,
     .right-actions {
         width: 100%;
@@ -508,27 +494,27 @@
     }
 
     .sidebar {
-        position: relative; /* Change to relative for fluid layout on smaller screens */
-        top: auto; /* Remove fixed top */
-        left: auto; /* Remove fixed left */
+        position: relative; 
+        top: auto; 
+        left: auto; 
         width: auto;
         min-width: unset;
-        flex-direction: row; /* Horizontal for items */
+        flex-direction: row; 
         justify-content: space-around;
-        flex-wrap: wrap; /* Allow items to wrap */
+        flex-wrap: wrap;
         padding: 16px;
         border-radius: 0.5rem;
         height: auto;
         overflow-y: visible;
-        transform: translateX(0) !important; /* Always show when stacked horizontally */
-        box-shadow: none; /* Remove shadow if it clashes with horizontal layout */
-        border-right: none; /* Remove border if stacked horizontally */
-        margin-left: 0; /* Ensure no residual margin */
-        z-index: auto; /* Reset z-index when relative */
+        transform: translateX(0) !important; 
+        box-shadow: none; 
+        border-right: none;
+        margin-left: 0;
+        z-index: auto; 
     }
     .dark-mode .sidebar {
-        background-color: #1e1e1e; /* Dark mode for relative sidebar */
-        border-right: none; /* No border in horizontal mode */
+        background-color: #1e1e1e; 
+        border-right: none; 
         box-shadow: none;
     }
 
@@ -559,28 +545,26 @@
         min-height: 500px;
     }
 
-    /* This rule applies specifically when the sidebar is intended to be a full-screen overlay/slide-out on mobile,
-        triggered by the hamburger menu. This is the "visible" state. */
     .dashboard-container.sidebar-open .sidebar {
-        position: fixed; /* Re-apply fixed for overlay */
-        top: 0; /* From top of viewport */
+        position: fixed; 
+        top: 0;
         left: 0;
-        height: 100vh; /* Full height */
-        width: 240px; /* Fixed width for the overlay */
-        transform: translateX(0) !important; /* Ensure it slides in */
+        height: 100vh; 
+        width: 240px;
+        transform: translateX(0) !important; 
         background-color: #fff;
-        z-index: 1000; /* High z-index to overlay content */
+        z-index: 1000; 
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        flex-direction: column; /* Back to column for menu items */
+        flex-direction: column; 
         justify-content: flex-start;
-        padding-top: 80px; /* Space for the top bar/close button if you add one */
+        padding-top: 80px; 
     }
     .dark-mode.dashboard-container.sidebar-open .sidebar {
-        background-color: #1e1e1e; /* Dark mode for fixed overlay sidebar */
+        background-color: #1e1e1e; 
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     }
 
-    /* Hide the horizontally stacked sidebar when the overlay sidebar is active */
+    
     .dashboard-container.sidebar-open .main-body-content .sidebar {
         display: none;
     }
@@ -594,8 +578,8 @@
         gap: 10px;
     }
     .section-box {
-        padding: 8px 12px; /* Slightly reduce padding on section boxes */
-        gap: 15px; /* Adjust gap inside sections */
+        padding: 8px 12px;
+        gap: 15px;
     }
 }
 
@@ -607,7 +591,7 @@
         padding: 8px;
         gap: 8px;
         margin: 8px;
-        flex-direction: row; /* Keep it a row even on smallest screens for main elements */
+        flex-direction: row; 
         justify-content: space-between;
     }
     .main-body-content {
@@ -618,34 +602,34 @@
         display: none;
     }
 
-    /* Adjust logo and hamburger position relative to each other on very small screens */
+   
     .logo-area {
-        width: auto; /* Allow logo area to size based on content */
+        width: auto; 
         justify-content: flex-start;
-        padding: 0; /* No padding needed */
+        padding: 0;
     }
     .logo-area img {
-        width: 100px; /* Smaller logo */
+        width: 100px; 
         height: 25px;
     }
 
     .hamburger-icon {
-        margin-right: 8px; /* Maintain space */
+        margin-right: 8px; 
     }
 
-    /* Stack header content sections vertically on very small screens */
+    
     .header-content-area {
         flex-direction: column;
         align-items: center;
         gap: 8px;
-        padding: 0; /* Remove internal padding */
+        padding: 0; 
     }
     .section-box,
     .search-container,
     .utility-box {
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap; /* Allow items inside sections to wrap if needed */
+        flex-wrap: wrap;
     }
     .button-group {
         width: 100%;
@@ -654,8 +638,5 @@
     .search-box {
         width: 100%;
     }
-    /* Hide icon-box on very small screens if space is critical */
-    /* .icon-box {
-        display: none;
-    } */
+    
 }
